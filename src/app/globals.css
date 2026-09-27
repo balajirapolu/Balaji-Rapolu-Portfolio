@@ -1,0 +1,104 @@
+@import url('https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,900,401,501,701,901&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-navy: #0D1526;
+    --surface-navy: #141F35;
+    --border-hairline: #28344C;
+    --text-primary: #E7E9EE;
+    --text-muted: #8891A6;
+    --accent-amber: #E8A33D;
+    --accent-amber-glow: rgba(232, 163, 61, 0.15);
+    --font-ranade: 'Ranade', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-navy);
+    color: var(--text-primary);
+    font-family: var(--font-ranade);
+    overflow-x: hidden;
+    font-variant-numeric: normal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-ranade);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--accent-amber);
+    color: #0D1526;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D1526;
+}
+::-webkit-scrollbar-thumb {
+  background: #28344C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8A33D;
+}
+
+/* Hairline Grid & Card Utility */
+.border-hairline {
+  border: 1px solid #28344C;
+}
+
+.bg-surface {
+  background-color: #141F35;
+}
+
+.text-amber-accent {
+  color: #E8A33D;
+}
+
+.bg-amber-accent {
+  background-color: #E8A33D;
+}
+
+.border-amber-accent {
+  border-color: #E8A33D;
+}
+
+/* Technical font helper - uses clean Ranade sans for numbers without slashed zero */
+.font-mono-tech {
+  font-family: var(--font-ranade);
+  font-variant-numeric: normal;
+}
+
+.font-ranade {
+  font-family: var(--font-ranade);
+}
+
+/* Glass & Card Glow Effects */
+.card-hover-effect {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-effect:hover {
+  border-color: rgba(232, 163, 61, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Terminal Cursor Blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Grain texture overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(232, 163, 61, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
