@@ -74,14 +74,14 @@ export default function CommandPaletteModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-[#0D1526]/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-[#0A0C0D]/80 backdrop-blur-sm animate-fadeIn">
       <div
-        className="w-full max-w-2xl bg-[#141F35] border border-[#28344C] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
+        className="w-full max-w-2xl bg-[#121518] border border-[#22262B] rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Search Input */}
-        <form onSubmit={handleSubmit} className="p-4 border-b border-[#28344C] flex items-center space-x-3 bg-[#0D1526]">
-          <Terminal className="w-5 h-5 text-[#E8A33D] shrink-0" />
+        <form onSubmit={handleSubmit} className="p-4 border-b border-[#22262B] flex items-center space-x-3 bg-[#0A0C0D]">
+          <Terminal className="w-5 h-5 text-[#0080FF] shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -93,7 +93,7 @@ export default function CommandPaletteModal() {
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="p-1 rounded text-[#8891A6] hover:text-[#E7E9EE] hover:bg-[#141F35]"
+            className="p-1 rounded text-[#8891A6] hover:text-[#E7E9EE] hover:bg-[#121518]"
           >
             <X className="w-5 h-5" />
           </button>
@@ -103,8 +103,8 @@ export default function CommandPaletteModal() {
         <div className="p-4 overflow-y-auto space-y-4 font-mono-tech text-xs">
           {result ? (
             <div className="space-y-3">
-              <div className="flex items-center justify-between pb-2 border-b border-[#28344C]">
-                <span className="text-[#E8A33D]">Result for: "{result.command}"</span>
+              <div className="flex items-center justify-between pb-2 border-b border-[#22262B]">
+                <span className="text-[#0080FF]">Result for: "{result.command}"</span>
                 <button
                   onClick={() => setResult(null)}
                   className="text-[#8891A6] hover:text-[#E7E9EE] text-[10px] uppercase"
@@ -114,14 +114,14 @@ export default function CommandPaletteModal() {
               </div>
 
               {result.type === 'project' ? (
-                <div className="p-4 rounded bg-[#0D1526] border border-[#28344C] space-y-2">
-                  <h4 className="text-sm font-bold text-[#E8A33D]">{result.content.title}</h4>
+                <div className="p-4 rounded bg-[#0A0C0D] border border-[#22262B] space-y-2">
+                  <h4 className="text-sm font-bold text-[#0080FF]">{result.content.title}</h4>
                   <p className="text-[#8891A6]">{result.content.subtitle}</p>
-                  <p className="text-[#E7E9EE]"><strong className="text-[#E8A33D]">Problem:</strong> {result.content.problem}</p>
-                  <p className="text-[#E7E9EE]"><strong className="text-[#E8A33D]">Tech Stack:</strong> {result.content.techStack.join(', ')}</p>
+                  <p className="text-[#E7E9EE]"><strong className="text-[#0080FF]">Problem:</strong> {result.content.problem}</p>
+                  <p className="text-[#E7E9EE]"><strong className="text-[#0080FF]">Tech Stack:</strong> {result.content.techStack.join(', ')}</p>
                 </div>
               ) : (
-                <pre className="p-4 rounded bg-[#0D1526] border border-[#28344C] text-[#8891A6] whitespace-pre-wrap leading-relaxed">
+                <pre className="p-4 rounded bg-[#0A0C0D] border border-[#22262B] text-[#8891A6] whitespace-pre-wrap leading-relaxed">
                   {typeof result.content === 'string' ? result.content : JSON.stringify(result.content, null, 2)}
                 </pre>
               )}
@@ -137,13 +137,13 @@ export default function CommandPaletteModal() {
                       setQuery(item.cmd);
                       handleRun(item.cmd);
                     }}
-                    className="p-3 rounded bg-[#0D1526] border border-[#28344C] hover:border-[#E8A33D] text-left flex items-center justify-between group transition-all"
+                    className="p-3 rounded bg-[#0A0C0D] border border-[#22262B] hover:border-[#0080FF] text-left flex items-center justify-between group transition-all"
                   >
                     <div>
-                      <span className="text-[#E8A33D] font-bold block">{item.cmd}</span>
+                      <span className="text-[#0080FF] font-bold block">{item.cmd}</span>
                       <span className="text-[#8891A6] text-[10px]">{item.desc}</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#8891A6] group-hover:text-[#E8A33D] transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#8891A6] group-hover:text-[#0080FF] transition-transform group-hover:translate-x-1" />
                   </button>
                 ))}
               </div>
@@ -152,13 +152,13 @@ export default function CommandPaletteModal() {
         </div>
 
         {/* Footer info */}
-        <div className="p-3 bg-[#0D1526] border-t border-[#28344C] flex items-center justify-between font-mono-tech text-[10px] text-[#8891A6]">
+        <div className="p-3 bg-[#0A0C0D] border-t border-[#22262B] flex items-center justify-between font-mono-tech text-[10px] text-[#8891A6]">
           <div className="flex items-center space-x-2">
-            <kbd className="px-1.5 py-0.5 rounded bg-[#141F35] border border-[#28344C] text-[#E8A33D]">ESC</kbd>
+            <kbd className="px-1.5 py-0.5 rounded bg-[#121518] border border-[#22262B] text-[#0080FF]">ESC</kbd>
             <span>to close</span>
           </div>
           <div className="flex items-center space-x-2">
-            <kbd className="px-1.5 py-0.5 rounded bg-[#141F35] border border-[#28344C] text-[#E8A33D]">ENTER</kbd>
+            <kbd className="px-1.5 py-0.5 rounded bg-[#121518] border border-[#22262B] text-[#0080FF]">ENTER</kbd>
             <span>to run command</span>
           </div>
         </div>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" width="100%" height="100%">
+  <g transform="translate(110, 30)">
+    <path fill="#EA4335" d="M35 50c0-11 9-20 20-20h20c11 0 20 9 20 20v5H35v-5z"/>
+    <path fill="#4285F4" d="M75 55v15c0 11-9 20-20 20H35c-11 0-20-9-20-20v-5h60z"/>
+    <path fill="#FBBC05" d="M15 50c0-11 9-20 20-20v40H15v-20z"/>
+    <path fill="#34A853" d="M75 70c0 11 9 20 20 20v-40H75v20z"/>
+  </g>
+  <text x="290" y="80" text-anchor="middle" fill="#E7E9EE" font-family="system-ui, sans-serif" font-weight="700" font-size="34">Google Cloud</text>
+  <text x="290" y="115" text-anchor="middle" fill="#E8A33D" font-family="system-ui, sans-serif" font-weight="600" font-size="16">VERTEX AI</text>
+</svg>

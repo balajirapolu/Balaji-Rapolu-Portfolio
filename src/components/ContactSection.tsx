@@ -43,12 +43,12 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 border-t border-[#28344C]/60">
+    <section id="contact" className="py-16 md:py-24 border-t border-[#22262B]/60">
       <div className="space-y-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div className="font-mono-tech text-xs text-[#E8A33D] uppercase tracking-widest">
+            <div className="font-mono-tech text-xs text-[#0080FF] uppercase tracking-widest">
               [05] GET IN TOUCH
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#E7E9EE] tracking-tight mt-1">
@@ -63,41 +63,41 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Direct Details & Terminal Shortcuts (Col 5) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-[#141F35] border border-[#28344C] rounded-xl p-6 sm:p-8 space-y-6">
-              <h3 className="font-mono-tech text-xs text-[#E8A33D] uppercase tracking-wider">
+            <div className="bg-[#121518] border border-[#22262B] rounded-xl p-6 sm:p-8 space-y-6">
+              <h3 className="font-mono-tech text-xs text-[#0080FF] uppercase tracking-wider">
                 Direct Channels
               </h3>
 
               <div className="space-y-4 font-mono-tech text-xs">
                 <a
                   href={`mailto:${PORTFOLIO_DATA.profile.email}`}
-                  className="p-3 rounded-lg bg-[#0D1526] border border-[#28344C] hover:border-[#E8A33D] flex items-center space-x-3 text-[#E7E9EE] hover:text-[#E8A33D] transition-colors"
+                  className="p-3 rounded-lg bg-[#0A0C0D] border border-[#22262B] hover:border-[#0080FF] flex items-center space-x-3 text-[#E7E9EE] hover:text-[#0080FF] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-[#E8A33D] shrink-0" />
+                  <Mail className="w-4 h-4 text-[#0080FF] shrink-0" />
                   <span className="truncate">{PORTFOLIO_DATA.profile.email}</span>
                 </a>
 
                 <a
                   href={`tel:${PORTFOLIO_DATA.profile.phone}`}
-                  className="p-3 rounded-lg bg-[#0D1526] border border-[#28344C] hover:border-[#E8A33D] flex items-center space-x-3 text-[#E7E9EE] hover:text-[#E8A33D] transition-colors"
+                  className="p-3 rounded-lg bg-[#0A0C0D] border border-[#22262B] hover:border-[#0080FF] flex items-center space-x-3 text-[#E7E9EE] hover:text-[#0080FF] transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-[#E8A33D] shrink-0" />
+                  <Phone className="w-4 h-4 text-[#0080FF] shrink-0" />
                   <span>{PORTFOLIO_DATA.profile.phone}</span>
                 </a>
 
-                <div className="p-3 rounded-lg bg-[#0D1526] border border-[#28344C] flex items-center space-x-3 text-[#8891A6]">
-                  <MapPin className="w-4 h-4 text-[#E8A33D] shrink-0" />
+                <div className="p-3 rounded-lg bg-[#0A0C0D] border border-[#22262B] flex items-center space-x-3 text-[#8891A6]">
+                  <MapPin className="w-4 h-4 text-[#0080FF] shrink-0" />
                   <span>{PORTFOLIO_DATA.profile.location}</span>
                 </div>
               </div>
 
               {/* Social Buttons */}
-              <div className="pt-4 border-t border-[#28344C] flex items-center space-x-3 font-mono-tech text-xs">
+              <div className="pt-4 border-t border-[#22262B] flex items-center space-x-3 font-mono-tech text-xs">
                 <a
                   href={PORTFOLIO_DATA.profile.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 py-2.5 rounded bg-[#0D1526] border border-[#28344C] hover:border-[#E8A33D] text-center text-[#E7E9EE] hover:text-[#E8A33D] transition-colors flex items-center justify-center space-x-1.5"
+                  className="flex-1 py-2.5 rounded bg-[#0A0C0D] border border-[#22262B] hover:border-[#0080FF] text-center text-[#E7E9EE] hover:text-[#0080FF] transition-colors flex items-center justify-center space-x-1.5"
                 >
                   <GithubIcon className="w-4 h-4" />
                   <span>GitHub</span>
@@ -106,7 +106,7 @@ export default function ContactSection() {
                   href={PORTFOLIO_DATA.profile.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 py-2.5 rounded bg-[#0D1526] border border-[#28344C] hover:border-[#E8A33D] text-center text-[#E7E9EE] hover:text-[#E8A33D] transition-colors flex items-center justify-center space-x-1.5"
+                  className="flex-1 py-2.5 rounded bg-[#0A0C0D] border border-[#22262B] hover:border-[#0080FF] text-center text-[#E7E9EE] hover:text-[#0080FF] transition-colors flex items-center justify-center space-x-1.5"
                 >
                   <LinkedinIcon className="w-4 h-4" />
                   <span>LinkedIn</span>
@@ -116,7 +116,7 @@ export default function ContactSection() {
               {/* CLI Launcher Button */}
               <button
                 onClick={openCmdPalette}
-                className="w-full py-3 rounded-xl bg-[#0D1526] border border-[#28344C] hover:border-[#E8A33D] text-[#E8A33D] font-mono-tech text-xs flex items-center justify-center space-x-2 transition-all shadow-md"
+                className="w-full py-3 rounded-xl bg-[#0A0C0D] border border-[#22262B] hover:border-[#0080FF] text-[#0080FF] font-mono-tech text-xs flex items-center justify-center space-x-2 transition-all shadow-md"
               >
                 <Terminal className="w-4 h-4" />
                 <span>Launch CLI Shell (Cmd+K)</span>
@@ -126,8 +126,8 @@ export default function ContactSection() {
 
           {/* Interactive Form (Col 7) */}
           <div className="lg:col-span-7">
-            <div className="bg-[#141F35] border border-[#28344C] rounded-xl p-6 sm:p-8 space-y-6">
-              <h3 className="font-mono-tech text-xs text-[#E8A33D] uppercase tracking-wider">
+            <div className="bg-[#121518] border border-[#22262B] rounded-xl p-6 sm:p-8 space-y-6">
+              <h3 className="font-mono-tech text-xs text-[#0080FF] uppercase tracking-wider">
                 Send a Message
               </h3>
 
@@ -141,7 +141,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Alex Mercer"
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D1526] border border-[#28344C] focus:border-[#E8A33D] text-[#E7E9EE] placeholder-[#8891A6]/40 focus:outline-none transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#0A0C0D] border border-[#22262B] focus:border-[#0080FF] text-[#E7E9EE] placeholder-[#8891A6]/40 focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -153,7 +153,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="alex@company.com"
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D1526] border border-[#28344C] focus:border-[#E8A33D] text-[#E7E9EE] placeholder-[#8891A6]/40 focus:outline-none transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#0A0C0D] border border-[#22262B] focus:border-[#0080FF] text-[#E7E9EE] placeholder-[#8891A6]/40 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Hello Balaji, we'd like to discuss a Full Stack Java role..."
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#0D1526] border border-[#28344C] focus:border-[#E8A33D] text-[#E7E9EE] placeholder-[#8891A6]/40 focus:outline-none transition-colors resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-[#0A0C0D] border border-[#22262B] focus:border-[#0080FF] text-[#E7E9EE] placeholder-[#8891A6]/40 focus:outline-none transition-colors resize-none"
                   />
                 </div>
 
@@ -187,7 +187,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full py-3 rounded-lg bg-[#E8A33D] hover:bg-[#d49230] disabled:opacity-50 text-[#0D1526] font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-center space-x-2 shadow-lg shadow-[#E8A33D]/10"
+                  className="w-full py-3 rounded-lg bg-[#0080FF] hover:bg-[#0066CC] disabled:opacity-50 text-white font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-center space-x-2 shadow-lg shadow-[#0080FF]/20"
                 >
                   <Send className="w-4 h-4" />
                   <span>{status === 'submitting' ? 'Transmitting Message...' : 'Send Direct Message'}</span>

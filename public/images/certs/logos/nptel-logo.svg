@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" width="100%" height="100%">
+  <circle cx="250" cy="50" r="30" fill="none" stroke="#E8A33D" stroke-width="4"/>
+  <text x="250" y="58" text-anchor="middle" fill="#E8A33D" font-family="system-ui, sans-serif" font-weight="900" font-size="24">NPTEL</text>
+  <text x="250" y="105" text-anchor="middle" fill="#E7E9EE" font-family="system-ui, sans-serif" font-weight="700" font-size="22" letter-spacing="2">SWAYAM / SKILL INDIA</text>
+  <text x="250" y="130" text-anchor="middle" fill="#8891A6" font-family="system-ui, sans-serif" font-weight="500" font-size="14">Ministry of Education, Govt. of India</text>
+</svg>

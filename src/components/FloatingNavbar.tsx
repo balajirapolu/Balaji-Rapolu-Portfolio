@@ -40,8 +40,8 @@ export default function FloatingNavbar() {
       className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none"
     >
       <div
-        className={`pointer-events-auto w-full max-w-5xl rounded-full bg-[#141F35]/90 border border-[#28344C] backdrop-blur-md px-6 py-2.5 flex items-center justify-between shadow-2xl transition-all duration-300 ${
-          scrolled ? 'shadow-[#000000]/60 border-[#E8A33D]/40 bg-[#0D1526]/95' : 'bg-[#141F35]/85'
+        className={`pointer-events-auto w-full max-w-5xl rounded-full bg-[#121518]/90 border border-[#22262B] backdrop-blur-md px-6 py-2.5 flex items-center justify-between shadow-2xl transition-all duration-300 ${
+          scrolled ? 'shadow-[#000000]/60 border-[#333942] bg-[#0A0C0D]/95' : 'bg-[#121518]/85'
         }`}
       >
         {/* Left Links (Desktop) */}
@@ -50,21 +50,15 @@ export default function FloatingNavbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[#8891A6] hover:text-[#E8A33D] transition-colors py-1"
+              className="text-[#8891A6] hover:text-[#E7E9EE] transition-colors py-1"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        {/* Center Logo */}
-        <a
-          href="#"
-          className="flex items-center space-x-2 text-[#E7E9EE] hover:text-[#E8A33D] transition-colors group"
-          title="Balaji Rapolu — Home"
-        >
-          <RBLogo className="w-8 h-8 text-[#E8A33D] group-hover:scale-110 transition-transform" />
-        </a>
+        {/* Center Logo Emblem Navlink */}
+        <RBLogo className="w-10 h-10" size={32} />
 
         {/* Right Links & CLI Shell (Desktop) */}
         <div className="hidden md:flex items-center space-x-6 font-mono-tech text-xs tracking-wider">
@@ -72,7 +66,7 @@ export default function FloatingNavbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[#8891A6] hover:text-[#E8A33D] transition-colors py-1"
+              className="text-[#8891A6] hover:text-[#E7E9EE] transition-colors py-1"
             >
               {item.label}
             </a>
@@ -80,12 +74,12 @@ export default function FloatingNavbar() {
 
           <button
             onClick={openCmdPalette}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#0D1526] border border-[#28344C] hover:border-[#E8A33D] text-[#E8A33D] transition-all"
+            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#0A0C0D] border border-[#22262B] hover:border-[#333942] text-[#0080FF] transition-all"
             title="Open CLI Shell (Cmd+K)"
           >
             <Terminal className="w-3.5 h-3.5" />
             <span className="text-[11px]">CLI</span>
-            <kbd className="px-1 rounded bg-[#141F35] text-[9px] text-[#8891A6] border border-[#28344C]">
+            <kbd className="px-1 rounded bg-[#121518] text-[9px] text-[#8891A6] border border-[#22262B]">
               ⌘K
             </kbd>
           </button>
@@ -94,7 +88,7 @@ export default function FloatingNavbar() {
         {/* Mobile Toggle Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 rounded-full bg-[#0D1526] border border-[#28344C] text-[#8891A6] hover:text-[#E7E9EE]"
+          className="md:hidden p-2 rounded-full bg-[#0A0C0D] border border-[#22262B] text-[#8891A6] hover:text-[#E7E9EE]"
         >
           {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
         </button>
@@ -102,13 +96,13 @@ export default function FloatingNavbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileOpen && (
-        <div className="pointer-events-auto absolute top-16 left-4 right-4 bg-[#141F35] border border-[#28344C] rounded-2xl p-4 font-mono-tech text-xs space-y-3 shadow-2xl md:hidden">
+        <div className="pointer-events-auto absolute top-16 left-4 right-4 bg-[#121518] border border-[#22262B] rounded-2xl p-4 font-mono-tech text-xs space-y-3 shadow-2xl md:hidden">
           {[...leftNav, ...rightNav].map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-[#8891A6] hover:text-[#E8A33D] py-2 border-b border-[#28344C]/50"
+              className="block text-[#8891A6] hover:text-[#E7E9EE] py-2 border-b border-[#22262B]/50"
             >
               {item.label}
             </a>
@@ -118,7 +112,7 @@ export default function FloatingNavbar() {
               setMobileOpen(false);
               openCmdPalette();
             }}
-            className="w-full py-2.5 rounded-xl bg-[#0D1526] border border-[#28344C] text-[#E8A33D] flex items-center justify-center space-x-2"
+            className="w-full py-2.5 rounded-xl bg-[#0A0C0D] border border-[#22262B] text-[#0080FF] flex items-center justify-center space-x-2"
           >
             <Terminal className="w-4 h-4" />
             <span>Launch CLI Shell (Cmd+K)</span>

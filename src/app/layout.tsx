@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
-      <body className="bg-[#0D1526] text-[#E7E9EE] antialiased selection:bg-[#E8A33D] selection:text-[#0D1526] min-h-screen flex flex-col relative overflow-x-hidden font-sans">
+      <body className="bg-[#0A0C0D] text-[#E7E9EE] antialiased selection:bg-[#0080FF] selection:text-[#FFFFFF] min-h-screen flex flex-col relative overflow-x-hidden font-sans">
         <CustomCursor />
         <FloatingNavbar />
         <main className="flex-1 w-full relative">

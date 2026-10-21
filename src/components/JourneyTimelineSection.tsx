@@ -10,12 +10,12 @@ export default function JourneyTimelineSection() {
   const phaseIcons = [Code, Server, Database, Cpu];
 
   return (
-    <section id="journey" className="py-16 md:py-24 border-t border-[#28344C]/60">
+    <section id="journey" className="py-16 md:py-24 border-t border-[#22262B]/60">
       <div className="space-y-12">
         {/* Section Title */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div className="font-mono-tech text-xs text-[#E8A33D] uppercase tracking-widest">
+            <div className="font-mono-tech text-xs text-[#8891A6] uppercase tracking-widest">
               [02] ARCHITECTURAL EVOLUTION
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#E7E9EE] tracking-tight mt-1">
@@ -41,13 +41,13 @@ export default function JourneyTimelineSection() {
                   onClick={() => setActivePhase(idx)}
                   className={`w-full p-4 rounded-xl border text-left font-mono-tech transition-all flex items-start space-x-3 ${
                     isActive
-                      ? 'bg-[#141F35] border-[#E8A33D] shadow-lg shadow-[#E8A33D]/5'
-                      : 'bg-[#0D1526] border-[#28344C] hover:border-[#8891A6]/50'
+                      ? 'bg-[#121518] border-[#0080FF] shadow-lg shadow-[#0080FF]/10'
+                      : 'bg-[#0A0C0D] border-[#22262B] hover:border-[#333942]'
                   }`}
                 >
                   <span
                     className={`px-2 py-1 rounded text-xs font-bold ${
-                      isActive ? 'bg-[#E8A33D] text-[#0D1526]' : 'bg-[#141F35] text-[#8891A6]'
+                      isActive ? 'bg-[#0080FF] text-[#FFFFFF]' : 'bg-[#121518] text-[#8891A6]'
                     }`}
                   >
                     {item.phase}
@@ -58,19 +58,19 @@ export default function JourneyTimelineSection() {
                     </span>
                     <span className="text-[11px] text-[#8891A6] block truncate">{item.subtitle}</span>
                   </div>
-                  <IconComp className={`w-4 h-4 shrink-0 mt-1 ${isActive ? 'text-[#E8A33D]' : 'text-[#8891A6]'}`} />
+                  <IconComp className={`w-4 h-4 shrink-0 mt-1 ${isActive ? 'text-[#0080FF]' : 'text-[#8891A6]'}`} />
                 </button>
               );
             })}
           </div>
 
           {/* Active Phase Deep Dive Card (Col 8) */}
-          <div className="lg:col-span-8 bg-[#141F35] border border-[#28344C] rounded-xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#E8A33D]/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="lg:col-span-8 bg-[#121518] border border-[#22262B] rounded-xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#0080FF]/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="flex items-center justify-between border-b border-[#28344C] pb-4">
+            <div className="flex items-center justify-between border-b border-[#22262B] pb-4">
               <div>
-                <span className="font-mono-tech text-xs text-[#E8A33D] uppercase">
+                <span className="font-mono-tech text-xs text-[#0080FF] uppercase">
                   PHASE {PORTFOLIO_DATA.journey[activePhase].phase} OF 04
                 </span>
                 <h3 className="text-2xl font-bold text-[#E7E9EE] mt-0.5">
@@ -93,7 +93,7 @@ export default function JourneyTimelineSection() {
                 {PORTFOLIO_DATA.journey[activePhase].tech.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1.5 rounded-md bg-[#0D1526] border border-[#28344C] font-mono-tech text-xs text-[#E8A33D]"
+                    className="px-3 py-1.5 rounded-md bg-[#0A0C0D] border border-[#22262B] font-mono-tech text-xs text-[#E7E9EE]"
                   >
                     {t}
                   </span>
@@ -102,11 +102,11 @@ export default function JourneyTimelineSection() {
             </div>
 
             {/* Bottom Progress Controls */}
-            <div className="pt-6 border-t border-[#28344C] flex items-center justify-between font-mono-tech text-xs">
+            <div className="pt-6 border-t border-[#22262B] flex items-center justify-between font-mono-tech text-xs">
               <button
                 disabled={activePhase === 0}
                 onClick={() => setActivePhase((prev) => Math.max(0, prev - 1))}
-                className="px-3 py-1.5 rounded bg-[#0D1526] border border-[#28344C] disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#E8A33D] text-[#8891A6] hover:text-[#E7E9EE]"
+                className="px-3 py-1.5 rounded bg-[#0A0C0D] border border-[#22262B] disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#333942] text-[#8891A6] hover:text-[#E7E9EE]"
               >
                 ← Previous Phase
               </button>
@@ -118,7 +118,7 @@ export default function JourneyTimelineSection() {
               <button
                 disabled={activePhase === PORTFOLIO_DATA.journey.length - 1}
                 onClick={() => setActivePhase((prev) => Math.min(PORTFOLIO_DATA.journey.length - 1, prev + 1))}
-                className="px-3 py-1.5 rounded bg-[#0D1526] border border-[#28344C] disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#E8A33D] text-[#8891A6] hover:text-[#E7E9EE] flex items-center space-x-1"
+                className="px-3 py-1.5 rounded bg-[#0A0C0D] border border-[#22262B] disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#333942] text-[#8891A6] hover:text-[#E7E9EE] flex items-center space-x-1"
               >
                 <span>Next Phase</span>
                 <ArrowRight className="w-3 h-3" />

@@ -1,41 +1,53 @@
-import React, { SVGProps } from 'react';
+'use client';
 
-interface LogoProps extends SVGProps<SVGSVGElement> {
-  size?: number | string;
-  color?: string;
+import React from 'react';
+import Image from 'next/image';
+
+interface RBLogoProps {
+  className?: string;
+  size?: number;
+  href?: string;
+  onClick?: () => void;
 }
 
-export const BrandLogo: React.FC<LogoProps> = ({ 
-  size = '100%', 
-  color = 'currentColor', 
-  className = 'w-7 h-7',
-  ...props 
+export const RBLogo: React.FC<RBLogoProps> = ({
+  className = '',
+  size = 36,
+  href = '#',
+  onClick,
 }) => {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      {...props}
-    >
-      <title>Brand Logo</title>
-      
-      {/* Left Shape */}
-      <path
-        d="M25,20 C45,20 50,35 28,45 C48,55 50,75 42,80 C32,80 25,65 32,55 C20,50 18,35 25,20 Z"
-        fill={color}
-      />
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) {
+      onClick();
+    }
+    if (href === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
-      {/* Right Shape */}
-      <path
-        d="M60,20 C75,20 85,35 55,45 C80,50 85,75 58,80 C68,70 70,55 58,45 C65,40 68,25 60,20 Z"
-        fill={color}
-      />
-    </svg>
+  return (
+    <a
+      href={href}
+      onClick={handleClick}
+      aria-label="Balaji Rapolu - Home"
+      title="Balaji Rapolu — Back to top"
+      className={`relative inline-flex items-center justify-center rounded-xl p-1 overflow-hidden transition-all duration-300 group cursor-pointer ${className}`}
+    >
+      <div className="relative flex items-center justify-center w-full h-full rounded-lg bg-[#0A0C0D] border border-[#22262B] p-1 transition-all duration-300 group-hover:border-[#0080FF] group-hover:shadow-[0_0_15px_rgba(0,128,255,0.4)] group-hover:scale-105">
+        <Image
+          src="/images/rb-logo.png"
+          alt="RB Monogram Logo"
+          width={size}
+          height={size}
+          priority
+          className="object-contain w-auto h-full max-h-full transition-transform duration-300 group-hover:scale-110 filter brightness-110"
+        />
+      </div>
+    </a>
   );
 };
 
-export default BrandLogo;
+export const BrandLogo = RBLogo;
+
+export default RBLogo;

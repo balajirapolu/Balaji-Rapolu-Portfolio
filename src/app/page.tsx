@@ -13,8 +13,8 @@ export default function Home() {
         {/* Full Viewport Width Hero */}
         <ImmersiveHero />
 
-        {/* Centered Content Container for Remaining Sections */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 pt-8 pb-16">
+        {/* Centered Content Container for Remaining Sections (90vw) */}
+        <div className="w-[90vw] max-w-[90vw] mx-auto px-2 sm:px-4 space-y-12 pt-8 pb-16">
           <BentoAboutSection />
           <JourneyTimelineSection />
           <ProjectCaseStudiesSection />

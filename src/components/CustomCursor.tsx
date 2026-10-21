@@ -58,8 +58,8 @@ export default function CustomCursor() {
       <div
         className={`-translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ${
           isPointer
-            ? 'w-8 h-8 bg-[#E8A33D]/30 border border-[#E8A33D] scale-125'
-            : 'w-4 h-4 bg-[#E8A33D] mix-blend-difference'
+            ? 'w-8 h-8 bg-[#0080FF]/30 border border-[#0080FF] scale-125'
+            : 'w-4 h-4 bg-[#0080FF] mix-blend-difference'
         }`}
       />
     </div>
