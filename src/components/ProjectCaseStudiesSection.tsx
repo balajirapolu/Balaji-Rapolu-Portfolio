@@ -24,12 +24,12 @@ export default function ProjectCaseStudiesSection() {
             </h2>
           </div>
           <p className="text-[#8891A6] text-xs font-mono-tech max-w-sm">
-            Deep technical case studies documenting real architectural choices, Spring Boot REST layers, and PyTorch models.
+            Deep technical case studies documenting real architectural choices, LangGraph multi-agent systems, Spring Boot REST layers, and PyTorch models.
           </p>
         </div>
 
         {/* Horizontal Project Selector Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono-tech text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 font-mono-tech text-xs">
           {PORTFOLIO_DATA.projects.map((proj) => {
             const isSelected = proj.id === selectedProjectId;
             return (

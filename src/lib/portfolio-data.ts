@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: 'MERN Full Stack' | 'AI/ML System' | 'Full-Stack';
+  category: 'MERN Full Stack' | 'AI/ML System' | 'Full-Stack' | 'AI Agent System';
   period: string;
   githubUrl: string;
   liveUrl?: string;
@@ -56,7 +56,7 @@ export const PORTFOLIO_DATA = {
     github: 'https://github.com/balajirapolu',
     linkedin: 'https://linkedin.com/in/balajirapolu',
     location: 'Andhra Pradesh, India',
-    currentFocus: 'Spring Boot REST microservices, Docker containerization & PyTorch computer vision',
+    currentFocus: 'LangGraph multi-agent systems, Spring Boot REST microservices & PyTorch computer vision',
   },
 
   academics: [
@@ -107,6 +107,33 @@ export const PORTFOLIO_DATA = {
   ] as WorkExperience[],
 
   projects: [
+    {
+      id: 'jobpulse',
+      title: 'JobPulse',
+      subtitle: 'AI-Powered Multi-Agent Job Recommender System',
+      category: 'AI Agent System',
+      period: '2026',
+      githubUrl: 'https://github.com/balajirapolu/JobPulse-AI-Powered-Multi-Agent-Job-Recommender',
+      featured: true,
+      problem: 'Job seekers face high friction with brittle keyword-scraping boards, opaque ranking rubrics, and token-heavy LLM re-ranking loops that introduce latency and cost.',
+      approach: 'Constructed an end-to-end multi-agent intelligence pipeline orchestrated with LangGraph, Groq LLMs (Llama 3.3 & Qwen), asynchronous SQLite checkpointing, and real-time SSE streaming.',
+      architecture: [
+        '12-Node LangGraph StateGraph with AsyncSqliteSaver checkpoints & human-in-the-loop interrupts',
+        'Parallel live API fan-out querying Adzuna, OpenWeb Ninja JSearch, Remotive, Arbeitnow, and Greenhouse ATS',
+        'Multi-stage candidate ingestion funnel (Fetched → Normalized → Deduped → Filtered → Scored → Shown)',
+        'FastAPI async backend streaming SSE telemetry to a Vite React UI behind unbuffered Nginx reverse proxy',
+      ],
+      techDecisions: [
+        'Leveraged ultra-low latency Groq Cloud inference (Llama-3.3-70b / Qwen-27b) to eliminate LLM scoring timeouts',
+        'Engineered deterministic Python rule filtering for staleness (>30d), HTTP liveness, and multi-currency normalization to enable 0-token instant re-ranking',
+        'Integrated LangGraph interrupt checkpoints allowing candidates to review and adjust skills and queries prior to live fetching',
+      ],
+      results: [
+        'Seamlessly coordinated 5 live job API adapters in parallel with isolated 25s timeout budgets and audit telemetry badges',
+        'Delivered complete containerized deployment with multi-stage Docker Compose, health checks, and persistent volumes',
+      ],
+      techStack: ['Python', 'LangGraph', 'LangChain', 'Groq LLM', 'FastAPI', 'React.js', 'Docker Compose', 'SQLite', 'Tailwind CSS'],
+    },
     {
       id: 'propex',
       title: 'PROPEx',
@@ -252,11 +279,11 @@ export const PORTFOLIO_DATA = {
 
   skills: {
     languages: ['Java (SE 17)', 'C++', 'SQL', 'JavaScript', 'TypeScript', 'Python'],
-    backend: ['Spring Boot', 'REST APIs', 'Spring Data JPA', 'JWT', 'Express.js', 'Node.js'],
+    backend: ['Spring Boot', 'REST APIs', 'FastAPI', 'Spring Data JPA', 'JWT', 'Express.js', 'Node.js'],
     frontend: ['React.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'React Native'],
-    databases: ['MySQL', 'MongoDB'],
-    tools: ['Git', 'GitHub', 'Docker', 'Docker Compose', 'Postman', 'Streamlit', 'PyTorch'],
-    coreCompetencies: ['Software Development Life Cycle (SDLC)', 'Object-Oriented Programming (OOP)', 'RESTful Architecture', 'Layered Application Design'],
+    databases: ['MySQL', 'MongoDB', 'SQLite'],
+    tools: ['Git', 'GitHub', 'Docker', 'Docker Compose', 'LangGraph', 'LangChain', 'Postman', 'Streamlit', 'PyTorch'],
+    coreCompetencies: ['Software Development Life Cycle (SDLC)', 'Multi-Agent Architectures', 'Object-Oriented Programming (OOP)', 'RESTful Architecture', 'Layered Application Design'],
   },
 
   journey: [
@@ -283,18 +310,18 @@ export const PORTFOLIO_DATA = {
     },
     {
       phase: '04',
-      title: 'AI Engineering & Modern Stack',
-      subtitle: 'Integrating PyTorch vision models with modern web runtimes',
-      description: 'Expanded expertise into deep learning image segmentation (Infosys Springboard intern), PyTorch ResNet34-UNet architectures, and LLM prompt design.',
-      tech: ['Python', 'PyTorch', 'Streamlit', 'OpenCV', 'Vertex AI'],
+      title: 'AI Engineering & Agentic Systems',
+      subtitle: 'PyTorch vision models & LangGraph multi-agent pipelines',
+      description: 'Expanded expertise into deep learning image segmentation (Infosys Springboard intern), PyTorch ResNet34-UNet architectures, and autonomous multi-agent pipelines with LangGraph and Groq LLMs (JobPulse).',
+      tech: ['Python', 'LangGraph', 'PyTorch', 'Groq LLMs', 'FastAPI', 'Streamlit', 'Docker'],
     },
   ],
 
   terminalHelp: [
     { command: 'whoami', desc: 'Display Balaji Rapolu profile overview' },
     { command: 'journey', desc: 'View evolution: MERN -> Java -> Spring Boot -> AI' },
-    { command: 'projects', desc: 'List all major full-stack case studies' },
-    { command: 'project <id>', desc: 'View deep technical breakdown (e.g. project propex)' },
+    { command: 'projects', desc: 'List all major full-stack & AI agent case studies' },
+    { command: 'project <id>', desc: 'View deep technical breakdown (e.g. project jobpulse)' },
     { command: 'skills', desc: 'Display technical skills & core competencies' },
     { command: 'gpa', desc: 'Show academic credentials (9.20 GPA @ SRM AP)' },
     { command: 'certs', desc: 'List verified professional certifications' },

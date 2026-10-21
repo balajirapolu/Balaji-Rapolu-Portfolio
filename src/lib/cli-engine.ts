@@ -90,7 +90,7 @@ export function executeCliCommand(rawCommand: string): CliOutput {
       return {
         command: rawCommand,
         type: 'error',
-        content: `Error: Please specify a project ID. Example: 'project notexchange' or 'cat launchpad'. Available: ${PORTFOLIO_DATA.projects.map(p => p.id).join(', ')}`,
+        content: `Error: Please specify a project ID. Example: 'project jobpulse', 'project notexchange' or 'cat launchpad'. Available: ${PORTFOLIO_DATA.projects.map(p => p.id).join(', ')}`,
         timestamp,
       };
     }

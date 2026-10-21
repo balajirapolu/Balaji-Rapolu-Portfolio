@@ -17,7 +17,7 @@ A high-performance, production-grade portfolio and technical engine designed for
 - **Signature CLI Command Engine**: Embedded interactive terminal shell supporting real-time commands (`whoami`, `projects`, `journey`, `gpa`, `certs`, `contact`, `sudo`) synced with a global `Cmd+K` / `Ctrl+K` modal overlay.
 - **Asymmetric Bento Overview**: Dynamic credit tiles showcasing 9.20 GPA academic credentials, verified Oracle & MongoDB certifications, active learning stack, and live GitHub API integration.
 - **Architectural Journey Timeline**: Interactive step-by-step narrative documenting the shift from MERN web stack to enterprise Java Spring Boot REST APIs and PyTorch computer vision systems.
-- **Technical Case Studies**: Deep-dive breakdowns for **PROPEx**, **VisionExtract**, **NoteXchange**, and **LaunchPad** covering Problem Statement → Architectural Decisions → Outcomes.
+- **Technical Case Studies**: Deep-dive breakdowns for **JobPulse**, **PROPEx**, **VisionExtract**, **NoteXchange**, and **LaunchPad** covering Problem Statement → Architectural Decisions → Outcomes.
 
 ---
 
